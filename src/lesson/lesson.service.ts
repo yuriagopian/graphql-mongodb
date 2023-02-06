@@ -18,8 +18,8 @@ export class LessonService {
 
   async createLesson(createLessonInput: CreateLessonInput): Promise<Lesson> {
     const id = uuid();
-
     const { endDate, name, startDate } = createLessonInput;
+
     const lesson = this.lessonRepository.create({
       id,
       name,
