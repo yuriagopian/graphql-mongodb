@@ -29,6 +29,7 @@ export class LessonService {
       name,
       endDate,
       startDate,
+      students: [],
     });
 
     return this.lessonRepository.save(lesson);
