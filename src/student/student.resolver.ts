@@ -4,7 +4,7 @@ import { StudentService } from './student.service';
 import { StudentType } from './student.type';
 
 @Resolver((of) => StudentType)
-export class LessonResolver {
+export class StudentResolver {
   constructor(private studentService: StudentService) {}
 
   @Mutation((returns) => StudentType)
