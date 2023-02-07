@@ -27,4 +27,8 @@ export class StudentService {
 
     return student;
   }
+
+  async getStudents(): Promise<Student[]> {
+    return this.studentRepository.find();
+  }
 }
