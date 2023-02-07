@@ -33,4 +33,15 @@ export class LessonService {
 
     return this.lessonRepository.save(lesson);
   }
+
+  async assignStudentstoLesson(
+    lessonId: string,
+    studentIds: string[],
+  ): Promise<Lesson> {
+    const lesson = await this.lessonRepository.findOne({
+      where: { id: lessonId },
+    });
+
+    lesson.students = [...lesson.students, ...studentIds];
+  }
 }
