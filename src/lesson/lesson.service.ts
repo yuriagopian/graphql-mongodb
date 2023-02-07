@@ -34,7 +34,7 @@ export class LessonService {
     return this.lessonRepository.save(lesson);
   }
 
-  async assignStudentstoLesson(
+  async assignStudentsToLesson(
     lessonId: string,
     studentIds: string[],
   ): Promise<Lesson> {
@@ -43,5 +43,6 @@ export class LessonService {
     });
 
     lesson.students = [...lesson.students, ...studentIds];
+    return this.lessonRepository.save(lesson);
   }
 }
